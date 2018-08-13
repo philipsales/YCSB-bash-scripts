@@ -1,7 +1,12 @@
-# Yahoo! Cloud Serving Benchmark 
+# YCSB + HL7 FHIR + Synthea
 
-## YCSB version 0.14.0
-bash script to run different databases
+bash script to run different databases using HL7 FHIR patient generated data
+
+## Yahoo! Cloud Serving Benchmark
+version 0.14.0
+
+## Synthetic Patient Population Simulator
+version 2.0.0
 
 ## Versions
 - [x] MongoDb version=3.6.3
