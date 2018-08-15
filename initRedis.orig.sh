@@ -3,8 +3,9 @@
 #import
 . settings/config.cfg
 
-DB=$CASSANDRA_DB
-HOSTS=$CASSANDRA_HOSTS
+DB=$REDIS_DB
+HOSTS=$REDIS_HOSTS
+PORT=$REDIS_PORT
 TOTAL_RUN=$TOTAL_RUN
 
 . $DB/truncate.sh
@@ -22,9 +23,9 @@ until [ $counter -gt $TOTAL_RUN ]
 do
     cleartable
     wait
-    loaddata "$DB" "$WORKLOAD" "$OUTPUT_DIR" "$counter" "$HOSTS"
+    loaddata "$DB" "$WORKLOAD" "$OUTPUT_DIR" "$counter" "$HOSTS" "$PORT"
     wait
-    runtask  "$DB" "$WORKLOAD" "$OUTPUT_DIR" "$counter" "$HOSTS"
+    runtask  "$DB" "$WORKLOAD" "$OUTPUT_DIR" "$counter" "$HOSTS" "$PORT"
     wait
     ((counter++))
     echo $counter

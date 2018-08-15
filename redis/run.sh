@@ -1,14 +1,28 @@
 #!/bin/bash
 
+#import
+. settings/config.cfg
+
 function runtask() {
-    FILE_NAME="run"
-    FILE_TYPE="txt"
+    COMMAND="run"
 
     DB=$1
     WORKLOAD=$2
-    OUTPUT_DIR=$3
+    WORKLOAD_DIR=$3
     COUNTER=$4
-    HOSTS=$5
+    DAT_FILE=$5
+    THROUGHPUT=$(echo "$DAT_FILE" | cut -f 1 -d '.')
+    FILE_EXT="txt"
+    RESULT_FILE=$WORKLOAD_DIR/$THROUGHPUT.$COMMAND-$COUNTER.$WORKLOAD.$FILE_EXT
 
-    ./bin/ycsb run $DB -P workloads/$WORKLOAD -p redis.host=$HOSTS -p redis.port=$PORT -s > $OUTPUT_DIR/$FILE_NAME.$COUNTER.$FILE_TYPE
+    . settings/$DB.cfg
+    cd $YCSB_BIN
+
+    ./bin/ycsb $COMMAND $DB \
+        -P workloads/$WORKLOAD  \
+        -P $SETTINGS_DIR/$DAT_FILE \
+        -s \
+        -p $HOSTS \
+        -p $PORT \
+        > $RESULT_FILE
 }
