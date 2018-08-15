@@ -1,7 +1,15 @@
 #!/bin/bash
 
 function cleartable() {
-    . settings/couchbase2.cfg
+    DB=$1
+    WORKLOAD=$2
+    OUTPUT_DIR=$3
+    COUNTER=$4
+    HOSTS=$5
+    PORT=$6
+    BUCKET=$7
+    USERNAME=$8
+    PASSWORD=$9
 
     COUCHBASE_APP="Couchbase\ Server.app"
     CLI_DIR="/Applications/$COUCHBASE_APP/Contents/Resources/couchbase-core/bin/"
