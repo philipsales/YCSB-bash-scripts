@@ -1,3 +1,7 @@
+#recordcount=1000
+#operationcount=1000
+#target=1000
+
 recordcount=1000
 operationcount=1000
 target=1000
