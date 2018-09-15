@@ -1,0 +1,19 @@
+run,database,workload,record_nbr,type,label,value
+r1,Redis,workload a,"1,000",overall,RunTime(ms),1064
+r1,Redis,workload a,"1,000",overall,Throughput(ops/sec),939.84
+r1,Redis,workload a,"10,000",overall,RunTime(ms),1563
+r1,Redis,workload a,"10,000",overall,Throughput(ops/sec),6397.952
+r1,Redis,workload a,"100,000",overall,RunTime(ms),9051
+r1,Redis,workload a,"100,000",overall,Throughput(ops/sec),11048.50
+m1,MongoDB,workload a,"1,000",overall,RunTime(ms),12645
+m1,MongoDB,workload a,"1,000",overall,Throughput(ops/sec),79.08
+m1,MongoDB,workload a,"10,000",overall,RunTime(ms),19637
+m1,MongoDB,workload a,"10,000",overall,Throughput(ops/sec),509.24
+m1,MongoDB,workload a,"100,000",overall,RunTime(ms),48384
+m1,MongoDB,workload a,"100,000",overall,Throughput(ops/sec),2066.79
+cs1,Cassandra,workload a,"1,000",overall,RunTime(ms),5374
+cs1,Cassandra,workload a,"1,000",overall,Throughput(ops/sec),186.08
+cs1,Cassandra,workload a,"10,000",overall,RunTime(ms),15042
+cs1,Cassandra,workload a,"10,000",overall,Throughput(ops/sec),664.80
+cs1,Cassandra,workload a,"100,000",overall,RunTime(ms),69294
+cs1,Cassandra,workload a,"100,000",overall,Throughput(ops/sec),1443.12
